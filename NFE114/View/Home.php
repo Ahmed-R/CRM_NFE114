@@ -1,14 +1,14 @@
 <?php
 session_start();
-include_once '../Modele/db_connection.php';
+include_once '../Model/db_connection.php';
 ?>
 <html>
 <head> <title>Home - Page d'accueil</title></head>
 <style> body {margin: 5%;}</style>
 <style> table{border: 1px solid black;}</style>
 <style> td{text-align: center;}</style>
-<style> #intro, #affichage, #acces_bo, #new_clt{display: inline-block; float: left; width: 30%;}</style>
-<style> #deconnexion{display: inline-block; float: right; width: 10%;}</style>
+<style> #intro, #displ, #bo_access, #new_clt{display: inline-block; float: left; width: 30%;}</style>
+<style> #disconnection{display: inline-block; float: right; width: 10%;}</style>
 <body>
   <div id="intro">
     <p> Bonjour <?php echo $_SESSION['login'] ;?> </p>
@@ -29,24 +29,24 @@ include_once '../Modele/db_connection.php';
       else {
         $req = $db->query('SELECT nom FROM bdd_clt_gestion');
       }
-    echo "<div id=\"affichage\">" ;
+    echo "<div id=\"displ\">" ;
 
     //For each client, we display a menu in a table
-    while ($donnee = $req->fetch()) { ?>
+    while ($data = $req->fetch()) { ?>
       <table>
         <tr>
           <td>
-            <?php echo $donnee['nom']; ?><br>
-            <form action="fiche_coor_clt.php" method="POST">
-              <input type="hidden" name="clt_name" value="<?php echo $donnee['nom'];?>">
+            <?php echo $data['nom']; ?><br>
+            <form action="contact_sheet.php" method="POST">
+              <input type="hidden" name="clt_name" value="<?php echo $data['nom'];?>">
               <input type="submit" value="Acceder à la fiche de Coordonnées de ce client">
             </form>
-            <form action="fiche_gestion_clt.php" method="POST">
-              <input type="hidden" name="clt_name" value="<?php echo $donnee['nom'];?>">
+            <form action="management_sheet.php" method="POST">
+              <input type="hidden" name="clt_name" value="<?php echo $data['nom'];?>">
               <input type="submit" value="Acceder à la fiche de Gestion de ce client">
             </form>
-            <form action="voir_devis.php" method="POST">
-              <input type="hidden" name="clt_name" value="<?php echo $donnee['nom'];?>">
+            <form action="see_quotation.php" method="POST">
+              <input type="hidden" name="clt_name" value="<?php echo $data['nom'];?>">
               <input type="submit" value="voir les devis de ce client">
             </form> </td> </tr> </table>
   <?php
@@ -54,15 +54,15 @@ include_once '../Modele/db_connection.php';
 ?>
     <!-- Here we display the options the user has access to-->
     </div>
-    <div id="acces_bo">
+    <div id="bo_access">
       <form action="backoffice.php" method="POST">
         <input type="submit" value="Accéder à votre back office">
       </form>
     </div>
 
-    <div id="deconnexion">
-      <form action="deconnexion.php" method="POST">
-        <input type="submit" value="Deconnexion">
+    <div id="disconnection">
+      <form action="disconnection.php" method="POST">
+        <input type="submit" value="Disconnection">
       </form>
     </div>
 

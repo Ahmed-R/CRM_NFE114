@@ -29,6 +29,6 @@ $req2->execute(array(
   $_POST['souris']));
 echo "Ajout dans la base de données bdd_items = OK" . "<br>";
 ?>
-  <form action="../Vue/Home.php">
+  <form action="../View/Home.php">
     <input type="submit" value="retour à la page Home">
   </form>

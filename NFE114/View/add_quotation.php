@@ -13,7 +13,7 @@ echo "veuillez renseigner les champs suivants" . "</p>";
     <title>Ajout devis : <?php echo $_POST['clt_name'];?></title>
   </head>
   <body>
-<form action="../Controleur/ctrl_ajout_devis.php" method="POST">
+<form action="../Controler/ctrl_add_quotation.php" method="POST">
             <p>
               <label for="clt_name"> Nom : </label><br />
               <input type="text" name="clt_name" id="clt_name" value="<?php echo $_POST['clt_name'];?>">

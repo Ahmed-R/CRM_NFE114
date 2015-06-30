@@ -11,14 +11,14 @@ session_start();
   if ($_SESSION['login']=="administrateur")
     { ?>
       <div id="add_user">
-        <form action="ajout_user.php" method="POST">
+        <form action="add_user.php" method="POST">
           <input type="submit" value="Accéder au formulaire d'ajout d'utilisateur">
         </form>
       </div>
     <?php } ?>
 
       <div id="new_mdp">
-        <form action="modification_mdp.php" method="POST">
+        <form action="pw_modification.php" method="POST">
           <input type="submit" value="Modification mdp">
         </form>
       </div>

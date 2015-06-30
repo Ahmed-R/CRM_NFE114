@@ -13,10 +13,10 @@ function login_verif($login)
   $req = $db->prepare('SELECT * FROM bdd_login WHERE login = ?');
   $req->execute(array($login));
 
-  //All this result is put into $donnee. We then look for the pw stored
-  //inside $donnee and we put it into $reponse
-  $donnee = $req->fetch();
-  $reponse = $donnee['mdp'];
+  //All this result is put into $data. We then look for the pw stored
+  //inside $data and we put it into $reponse
+  $data = $req->fetch();
+  $reponse = $data['mdp'];
   return ($reponse);
 }
 

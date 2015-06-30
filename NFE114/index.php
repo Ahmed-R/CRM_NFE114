@@ -9,7 +9,7 @@ session_start();
     </head>
         <style> body {text-align: center;} </style>
     <body>
-        <form action="Controleur/ctrl_connection_logindb.php" method="POST">
+        <form action="Controler/ctrl_connection_logindb.php" method="POST">
             <!-- first step : the user sends his ID/PW -->
             <p>
               <label for="login"> login : </label><br />

@@ -12,14 +12,14 @@ function db_connection() {
 return ($db);
 }
 
-function modif_mdp($newmdp) {
+function modif_mdp($newpw) {
 $login = $_SESSION['login'];
 $db = db_connection();
 
 $req = $db->prepare('UPDATE bdd_login
   SET mdp = ?
   WHERE login = ?');
-$req->execute(array($newmdp, $login));
+$req->execute(array($newpw, $login));
 
 }
 

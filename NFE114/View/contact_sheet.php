@@ -1,15 +1,15 @@
 <?php
 session_start();
-$nomrecu = $_POST['clt_name'];
+$namereceived = $_POST['clt_name'];
 include 'clt_construction.php';
-include_once '../Modele/db_connection.php';
-include '../Controleur/ctrl_fiche_coor_clt.php';
-include '../Modele/db_contact.php';
+include_once '../Model/db_connection.php';
+include '../Controler/ctrl_contact_sheet.php';
+include '../Model/db_contact.php';
 ?>
 
 <html>
 <head>
-  <title>Coordonnées de <?php echo $nomrecu;?></title>
+  <title>Coordonnées de <?php echo $Namerecu;?></title>
 </head>
 <body>
   <p>
@@ -22,21 +22,21 @@ include '../Modele/db_contact.php';
   $db = db_connect();
 
   //fetching the intel from the DB
-  $req = contact_requisition($db, $nomrecu);
+  $req = contact_requisition($db, $namereceived);
 
-  $donnee = $req->fetch();
-  $addr = $donnee['adresse'];
-  $email = $donnee['email'];
-  $tel = $donnee['tel'];
+  $data = $req->fetch();
+  $addr = $data['adresse'];
+  $email = $data['email'];
+  $tel = $data['tel'];
 
   //The Coorclt object is located in Controleur/ctrl_fiche_coor_clt.php
   $client = new Coorclt;
 
-  $client->SetNom($nomrecu);
-  $client->GetNom();
+  $client->SetName($namereceived);
+  $client->GetName();
 
-  $client->SetAdress($addr);
-  $client->GetAdress();
+  $client->SetAddress($addr);
+  $client->GetAddress();
 
   $client->SetEmail($email);
   $client->GetEmail();

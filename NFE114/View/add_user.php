@@ -7,8 +7,8 @@ session_start();
   <style>body{margin: 3%;}</style>
 </head>
 <body>
-  <div id="form_ajout_user">
-    <form action="../Controleur/ctrl_ajout_user.php" method="POST">
+  <div id="form_add_user">
+    <form action="../Controler/ctrl_add_user.php" method="POST">
       <p><label for="login">renseignez ici le login donnée au nouvel user :</label><br>
         <input type="text" id="login" name="login"></p>
       <p><label for="mdp"> Renseignez ici le mdp de base :</label><br>
@@ -19,7 +19,7 @@ session_start();
     </form>
   </div>
 
-  <div id="retour_home">
+  <div id="return_home">
     <form action="home.php">
       <input type="submit" value="Retour à la Home">
     </form>

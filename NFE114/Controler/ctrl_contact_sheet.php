@@ -3,25 +3,25 @@ session_start();
   class Coorclt
   {
     private $_id;
-    private $_nom;
-    private $_adress;
+    private $_name;
+    private $_address;
     private $_email;
     private $_tel;
 
     //Name
-    function SetNom($nom) {
-      $this->_nom=$nom;
+    function SetNom($name) {
+      $this->_name=$name;
     }
-    function GetNom($nom) {
-      echo "<p> Raison sociale : " . $this->_nom . "</p>";
+    function GetNom($name) {
+      echo "<p> Raison sociale : " . $this->_name . "</p>";
     }
 
-    //Adress
-    function SetAdress($addr) {
-      $this->_adress=$addr;
+    //Address
+    function SetAddress($addr) {
+      $this->_address=$addr;
     }
-    function GetAdress() {
-      echo "<p> Adresse : " . $this->_adress . "</p>";
+    function GetAddress() {
+      echo "<p> Addresse : " . $this->_address . "</p>";
     }
 
     //Email
