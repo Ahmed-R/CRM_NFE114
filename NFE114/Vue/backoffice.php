@@ -23,26 +23,6 @@ session_start();
         </form>
       </div>
 
-<!--       <div id="newmdp">
-        <form action="ctrl_modif_info.php" method="POST">
-          <label for="newmdp">Nouveau mot de passe :</label><br>
-          <input type="text" id="newmdp" name="newmdp">
-          <input type="submit" value="Valider">
-        </form>
-      </div> -->
-
-      <div id="new_clt">
-        <form action="nouveau_client.php" method="POST">
-          <input type="submit" value="Formulaire de nouveau client">
-        </form>
-      </div>
-
-      <div id="deconnexion">
-        <form action="deconnexion.php" method="POST">
-          <input type="submit" value="Deconnexion">
-        </form>
-      </div>
-
       <div id="home">
         <form action="home.php">
           <input type="submit" value="Retour à la Home">

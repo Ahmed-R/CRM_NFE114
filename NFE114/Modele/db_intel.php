@@ -6,17 +6,7 @@ include_once 'db_connection.php';
 function login_verif($login)
 {
   //Connection to the database
-  // Old function : $db = db_connection();
-  // Can't figure why the script doesn't work if I try to use a function call
-  try
-    {
-      $db = new PDO ('mysql:host=localhost;dbname=nfe114;charset=utf8',
-        'root', 'root');
-    }
-  catch(Exception $e)
-    {
-      die('Erreur : ' . $e->getMessage());
-    }
+  $db = db_connect();
 
   //We look for a match between the login sent by the user and a login
   //saved in the database

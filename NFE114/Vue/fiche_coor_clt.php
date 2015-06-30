@@ -2,6 +2,9 @@
 session_start();
 $nomrecu = $_POST['clt_name'];
 include 'clt_construction.php';
+include_once '../Modele/db_connection.php';
+include '../Controleur/ctrl_fiche_coor_clt.php';
+include '../Modele/db_contact.php';
 ?>
 
 <html>
@@ -15,62 +18,18 @@ include 'clt_construction.php';
 
 <!--Here we will find the information on the client we clicked on earlier-->
 <?php
+  //connection to the DB
+  $db = db_connect();
 
-  class Coorclt
-  {
-    private $_id;
-    private $_nom;
-    private $_adress;
-    private $_email;
-    private $_tel;
+  //fetching the intel from the DB
+  $req = contact_requisition($db, $nomrecu);
 
-    //Name
-    function SetNom($nom) {
-      $this->_nom=$nom;
-    }
-    function GetNom() {
-      echo "<p> Raison sociale : " . $this->_nom . "</p>";
-    }
-
-    //Adress
-    function SetAdress($addr) {
-      $this->_adress=$addr;
-    }
-    function GetAdress() {
-      echo "<p> Adresse : " . $this->_adress . "</p>";
-    }
-
-    //Email
-    function SetEmail($email) {
-      $this->_email=$email;
-    }
-    function GetEmail() {
-      echo "<p> Email de contact : " . $this->_email . "</p>";
-    }
-
-    //Tel
-    function SetTel($tel) {
-      $this->_tel=$tel;
-    }
-    function GetTel() {
-      echo "<p> Numero de téléphone du contact : " . $this->_tel . "</p>";
-    }
-
-  }
-
-  try {
-      $db = new PDO ('mysql:host=localhost;dbname=nfe114;charset=utf8', 'root', 'root');
-    }
-  catch(Exception $e) {
-      die('Erreur : ' . $e->getMessage());
-    }
-  $req = $db->prepare('SELECT * FROM bdd_clt_coor WHERE nom = ?');
-  $req->execute(array($nomrecu));
   $donnee = $req->fetch();
   $addr = $donnee['adresse'];
   $email = $donnee['email'];
   $tel = $donnee['tel'];
 
+  //The Coorclt object is located in Controleur/ctrl_fiche_coor_clt.php
   $client = new Coorclt;
 
   $client->SetNom($nomrecu);
@@ -90,12 +49,3 @@ include 'clt_construction.php';
   </form>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
