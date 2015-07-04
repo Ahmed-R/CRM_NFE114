@@ -9,7 +9,7 @@ session_start();
 </head>
 <body>
       <div id="newmdp">
-        <form action="ctrl_modif_info.php" method="POST">
+        <form action="../Controler/ctrl_intel_modif.php" method="POST">
           <label for="newmdp">Nouveau mot de passe :</label><br>
           <input type="text" id="newmdp" name="newmdp">
           <input type="submit" value="Valider">

@@ -7,14 +7,14 @@ echo "Veuillez renseigner le formulaire ci dessous pour ajouter un nouveau clien
   <title> Formulaire de saisie d'un nouveau client</title>
 </head>
 <body>
-  <form action="../Controleur/ctrl_nouveau_client.php" method="POST">
+  <form action="../Controler/ctrl_new_clt.php" method="POST">
             <p>
-              <label for="nom"> nom : </label><br />
-              <input type="text" name="nom" id="nom">
+              <label for="name"> nom : </label><br />
+              <input type="text" name="name" id="name">
             </p>
             <p>
-              <label for="adresse"> adresse : </label><br />
-              <input type="text" name="adresse" id="adresse">
+              <label for="address"> adresse : </label><br />
+              <input type="text" name="address" id="address">
             </p>
             <p>
               <label for="email"> email : </label><br />
@@ -25,16 +25,17 @@ echo "Veuillez renseigner le formulaire ci dessous pour ajouter un nouveau clien
               <input type="text" name="tel" id="tel">
             </p>
             <p>
-              <label for="resp_compte"> responsable du compte : </label><br />
-              <input type="text" name="resp_compte" id="resp_compte">
+              <label for="account_man"> responsable du compte : </label><br />
+              <input type="text" name="account_man" id="account_man">
             </p>
             <p>
-              <label for="resp_equipe"> responsable d'equipe : </label><br />
-              <input type="text" name="resp_equipe" id="resp_equipe">
+              <label for="team_leader"> responsable d'equipe : </label><br />
+              <input type="text" name="team_leader" id="team_leader">
             </p>
             <p>
-              <label for="ddc"> date du dernier contact (au format AAAA-MM-JJ): </label><br />
-              <input type="text" name="ddc" id="ddc">
+              <!-- lc = last contact-->
+              <label for="lc"> date du dernier contact (au format AAAA-MM-JJ): </label><br />
+              <input type="text" name="lc" id="lc">
             </p>
             <p>
               <label for="premium"> premium : </label><br />

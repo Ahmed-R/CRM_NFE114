@@ -62,12 +62,12 @@ include_once '../Model/db_connection.php';
 
     <div id="disconnection">
       <form action="disconnection.php" method="POST">
-        <input type="submit" value="Disconnection">
+        <input type="submit" value="Se déconnecter">
       </form>
     </div>
 
     <div id="new_clt">
-      <form action="nouveau_client.php" method="POST">
+      <form action="new_clt.php" method="POST">
           <input type="submit" value="Formulaire de nouveau client">
       </form>
     </div>
