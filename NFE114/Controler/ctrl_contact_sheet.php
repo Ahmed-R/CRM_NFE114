@@ -1,5 +1,6 @@
 <?php
 session_start();
+
   class Coorclt
   {
     private $_id;
@@ -9,10 +10,10 @@ session_start();
     private $_tel;
 
     //Name
-    function SetNom($name) {
+    function SetName($name) {
       $this->_name=$name;
     }
-    function GetNom($name) {
+    function GetName($name) {
       echo "<p> Raison sociale : " . $this->_name . "</p>";
     }
 

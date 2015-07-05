@@ -9,7 +9,7 @@ include '../Model/db_contact.php';
 
 <html>
 <head>
-  <title>Coordonnées de <?php echo $Namerecu;?></title>
+  <title>Coordonnées de <?php echo $namereceived;?></title>
 </head>
 <body>
   <p>
@@ -25,6 +25,7 @@ include '../Model/db_contact.php';
   $req = contact_requisition($db, $namereceived);
 
   $data = $req->fetch();
+
   $addr = $data['adresse'];
   $email = $data['email'];
   $tel = $data['tel'];

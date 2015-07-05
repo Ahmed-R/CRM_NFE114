@@ -16,14 +16,14 @@ echo "vous êtes sur la page des devis" . "</p>";
     echo "client : " . $donnee['nom'] . "<br>";
     echo "description : " . $donnee['description'] . "<br>";
 ?>
-    <form action="detail_devis.php" method="POST">
+    <form action="quotation_detail.php" method="POST">
       <input type="hidden" name="clt_name" value="<?php echo $_POST['clt_name'];?>">
       <input type="submit" value="Voir le détail de ce devis">
     </form>
     <?php
   }
 ?>
-    <form action="ajout_devis.php" method="POST">
+    <form action="add_quotation.php" method="POST">
       <input type="hidden" name="clt_name" value="<?php echo $_POST['clt_name'];?>">
       <input type="submit" value="Ajouter un devis à ce client">
     </form>

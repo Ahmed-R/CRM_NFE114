@@ -7,5 +7,7 @@ function contact_requisition($db, $namereceived)
   $req->execute(array($namereceived));
 
   return ($req);
+
+
 }
 ?>
