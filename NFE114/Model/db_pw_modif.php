@@ -16,7 +16,7 @@ function modif_mdp($newpw) {
 $login = $_SESSION['login'];
 $db = db_connection();
 
-$req = $db->prepare('UPDATE bdd_login
+$req = $db->prepare('UPDATE db_login
   SET mdp = ?
   WHERE login = ?');
 $req->execute(array($newpw, $login));

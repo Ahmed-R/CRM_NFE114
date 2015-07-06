@@ -21,13 +21,13 @@ include_once '../Model/db_connection.php';
 
       //if the user is not the administrator, we display only his clients.
       if ($_SESSION['login'] != "administrateur") {
-        $req = $db->prepare('SELECT nom FROM bdd_clt_gestion WHERE resp_compte = ?');
+        $req = $db->prepare('SELECT nom FROM db_clt_manag WHERE resp_compte = ?');
         $req->execute(array($_SESSION['login']));
       }
 
       //if the request is sent by the admin, we display all the clients.
       else {
-        $req = $db->query('SELECT nom FROM bdd_clt_gestion');
+        $req = $db->query('SELECT nom FROM db_clt_manag');
       }
     echo "<div id=\"displ\">" ;
 
@@ -48,7 +48,16 @@ include_once '../Model/db_connection.php';
             <form action="see_quotation.php" method="POST">
               <input type="hidden" name="clt_name" value="<?php echo $data['nom'];?>">
               <input type="submit" value="voir les devis de ce client">
-            </form> </td> </tr> </table>
+            </form>
+
+            <?php if ($_SESSION['login'] == "administrateur") { ?>
+            <form action="../Controler/ctrl_delete.php" method="POST">
+              <input type="hidden" name="clt_name" value="<?php echo $data['nom'];?>">
+              <input type="submit" value="supprimer ce client">
+            </form>
+            <?php } ?>
+
+          </td> </tr> </table>
   <?php
     }
 ?>

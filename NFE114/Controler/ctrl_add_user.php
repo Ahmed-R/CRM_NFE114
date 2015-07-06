@@ -8,14 +8,14 @@ try {
     die('Erreur : ' . $e->getMessage());
   }
 
-//insertion into the bdd_clt_devis table
-$req1 = $db->prepare('INSERT INTO bdd_login(login, mdp, blocked)
+//insertion into the db_login table
+$req1 = $db->prepare('INSERT INTO db_login(login, mdp, blocked)
   VALUES (?, ?, ?)');
 $req1->execute(array(
   $_POST['login'],
   $_POST['mdp'],
   $_POST['blocked']));
-echo "Ajout dans la base de données bdd_login = OK" . "<br>";
+echo "Ajout dans la base de données db_login = OK" . "<br>";
 ?>
   <form action="../View/Home.php">
     <input type="submit" value="retour à la page Home">

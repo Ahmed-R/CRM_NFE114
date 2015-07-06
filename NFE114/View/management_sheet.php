@@ -68,7 +68,7 @@ class Gestclt {
   catch(Exception $e) {
       die('Erreur : ' . $e->getMessage());
     }
-  $req = $db->prepare('SELECT * FROM bdd_clt_gestion WHERE nom = ?');
+  $req = $db->prepare('SELECT * FROM db_clt_manag WHERE nom = ?');
   $req->execute(array($nomrecu));
   $donnee = $req->fetch();
   $respc = $donnee['resp_compte'];

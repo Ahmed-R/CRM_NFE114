@@ -10,7 +10,7 @@ function login_verif($login)
 
   //We look for a match between the login sent by the user and a login
   //saved in the database
-  $req = $db->prepare('SELECT * FROM bdd_login WHERE login = ?');
+  $req = $db->prepare('SELECT * FROM db_login WHERE login = ?');
   $req->execute(array($login));
 
   //All this result is put into $data. We then look for the pw stored

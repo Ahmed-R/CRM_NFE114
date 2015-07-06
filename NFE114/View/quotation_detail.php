@@ -9,7 +9,7 @@ echo "page de détails des devis" . "</p>";
   catch(Exception $e) {
     die('Erreur : ' . $e->getMessage());
   }
-  $req = $db->prepare('SELECT * FROM bdd_items WHERE nom = ?');
+  $req = $db->prepare('SELECT * FROM db_items WHERE nom = ?');
   $req->execute(array($_POST['clt_name']));
 
   while ($donnee = $req->fetch())

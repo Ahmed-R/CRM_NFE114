@@ -8,7 +8,7 @@ echo "vous êtes sur la page des devis" . "</p>";
     die('Erreur : ' . $e->getMessage());
   }
 
-  $req = $db->prepare('SELECT * FROM bdd_clt_devis WHERE nom = ?');
+  $req = $db->prepare('SELECT * FROM db_clt_quotation WHERE nom = ?');
   $req->execute(array($_POST['clt_name']));
 
   while ($donnee = $req->fetch())
