@@ -8,8 +8,8 @@ echo "the entry has been deleted";
   <title>Deletion OK</title>
 </head>
 <body>
-  <form action="../index.php">
-    <input type="submit" value="Retour à l'index">
+  <form action="../View/Home.php">
+    <input type="submit" value="Retour à la home">
   </form>
 </body>
 </html>
