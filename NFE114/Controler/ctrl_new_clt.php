@@ -38,7 +38,7 @@ echo "Ajout dans la base de données db_clt_manag = OK" . "<br>";
   <title>enregistrement en bdd</title>
 </head>
 <body>
-  <form action="../View/home.php">
+  <form action="../view/home.php">
     <input type="submit" value="retour à la page Home">
   </form>
 </body>

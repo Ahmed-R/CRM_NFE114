@@ -17,6 +17,6 @@ $req1->execute(array(
   $_POST['blocked']));
 echo "Ajout dans la base de données db_login = OK" . "<br>";
 ?>
-  <form action="../View/Home.php">
+  <form action="../view/home.php">
     <input type="submit" value="retour à la page Home">
   </form>

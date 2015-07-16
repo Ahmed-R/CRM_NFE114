@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../Model/db_intel.php';
+include '../model/db_intel.php';
 
 //we recover the login and the pw sent by the user
 $login = $_POST['login'];
@@ -15,7 +15,7 @@ if ($mdp == $db_mdp)
   //if everything is ok, we set the session with those login/pw
   $_SESSION['login']=$login;
   $_SESSION['mdp']=$mdp;
-  header('location:../View/Home.php');
+  header('location:../view/home.php');
  }
 else
  {

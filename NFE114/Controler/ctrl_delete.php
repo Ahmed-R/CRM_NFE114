@@ -1,6 +1,6 @@
 <?php
 session_start();
-Include_once '../Model/db_connection.php';
+Include_once '../model/db_connection.php';
 $name = $_POST['clt_name'];
 
 $db = db_connect();
@@ -12,5 +12,5 @@ $req2->execute(array($name));
 $req3 = $db->prepare('DELETE FROM db_clt_manag WHERE nom = ?');
 $req3->execute(array($name));
 
-header('location:../View/deletion_ok.php');
+header('location:../view/deletion_ok.php');
 ?>
